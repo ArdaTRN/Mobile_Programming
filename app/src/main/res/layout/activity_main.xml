@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="29dp"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginBottom="36dp"
+        android:text="Aydın Ürün Oluşturma"
+        android:textColor="#3F51B5"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/ao_etxt_urun_isim"
+        app:layout_constraintStart_toStartOf="@+id/ao_etxt_urun_isim"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/ao_etxt_urun_isim"
+        android:layout_width="275dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="2dp"
+        android:ems="10"
+        android:hint="Ürün ismi giriniz"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/ao_etxt_urun_fiyat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/ao_etxt_urun_fiyat"
+        android:layout_width="275dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="7dp"
+        android:ems="10"
+        android:hint="Ürün fiyatını giriniz"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/ao_etxt_urun_aciklama"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ao_etxt_urun_isim" />
+
+    <Spinner
+        android:id="@+id/ao_spinner"
+        android:layout_width="275dp"
+        android:layout_height="0dp"
+        android:entries="@array/urun_tip"
+        android:prompt="@string/urun_miktar"
+        app:layout_constraintBottom_toTopOf="@+id/ao_imageView2_foto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ao_etxt_urun_aciklama" />
+
+    <EditText
+        android:id="@+id/ao_etxt_urun_aciklama"
+        android:layout_width="275dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="23dp"
+        android:ems="10"
+        android:hint="Açıklama Giriniz"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/ao_spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ao_etxt_urun_fiyat" />
+
+    <Button
+        android:id="@+id/ao_btn_urun_olustur"
+        android:layout_width="258dp"
+        android:layout_height="0dp"
+        android:onClick="ao_urunOlustur"
+        android:text="Ürün Oluştur"
+        app:layout_constraintBottom_toTopOf="@+id/ao_urun_listele"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ao_btn_fotograf_cek" />
+
+    <Button
+        android:id="@+id/ao_urun_listele"
+        android:layout_width="261dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="5dp"
+        android:text="Ürünleri Listele"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ao_btn_urun_olustur" />
+
+    <Button
+        android:id="@+id/ao_btn_fotograf_cek"
+        android:layout_width="252dp"
+        android:layout_height="0dp"
+        android:text="FOTOĞRAF ÇEK"
+        app:layout_constraintBottom_toTopOf="@+id/ao_btn_urun_olustur"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ao_imageView2_foto" />
+
+    <ImageView
+        android:id="@+id/ao_imageView2_foto"
+        android:layout_width="126dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="174dp"
+        app:layout_constraintBottom_toTopOf="@+id/ao_btn_fotograf_cek"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ao_spinner"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="0dp"
+        android:layout_height="146dp"
+        android:layout_marginStart="81dp"
+        android:layout_marginLeft="81dp"
+        app:layout_constraintBottom_toTopOf="@+id/ao_btn_fotograf_cek"
+        app:layout_constraintEnd_toStartOf="@+id/ao_chb_favori"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ao_imageView2_foto">
+
+        <RadioButton
+            android:id="@+id/ao_rdb_diger"
+            android:layout_width="101dp"
+            android:layout_height="48dp"
+            android:text="Diğer Ürün" />
+
+        <RadioButton
+            android:id="@+id/ao_rdb_icecek"
+            android:layout_width="101dp"
+            android:layout_height="49dp"
+            android:text="İçecek" />
+
+        <RadioButton
+            android:id="@+id/ao_rdb_yiyecek"
+            android:layout_width="101dp"
+            android:layout_height="48dp"
+            android:text="Yiyecek" />
+    </RadioGroup>
+
+    <CheckBox
+        android:id="@+id/ao_chb_favori"
+        android:layout_width="0dp"
+        android:layout_height="43dp"
+        android:layout_marginEnd="82dp"
+        android:layout_marginRight="82dp"
+        android:text="Favorilerime Ekle"
+        app:layout_constraintBottom_toTopOf="@+id/ao_btn_fotograf_cek"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/radioGroup"
+        app:layout_constraintTop_toBottomOf="@+id/ao_imageView2_foto" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

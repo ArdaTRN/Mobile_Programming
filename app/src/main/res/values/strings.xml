@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">AYDIN TANITIM</string>
+
+    <string name="urun_miktar">Urun miktar seçiniz</string>
+
+    <string-array name="urun_tip">
+        <item>paket</item>
+        <item>kilo</item>
+        <item>adet</item>
+        <item>kutu</item>
+    </string-array>
+</resources>
